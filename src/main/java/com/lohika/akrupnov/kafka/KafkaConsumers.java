@@ -61,7 +61,7 @@ public class KafkaConsumers {
 
     private static Consumer<String, String> startTotalCostTopicConsumer() {
         System.out.println("Creating Total Cost consumer");
-        Consumer<String, String> totalCostConsumer = KafkaConnections.createConsumer("brandT§otalCostConsumer", STRING_DESERIALIZER);
+        Consumer<String, String> totalCostConsumer = KafkaConnections.createConsumer("brandTotalCostConsumer", STRING_DESERIALIZER);
         totalCostConsumer.subscribe(Collections.singletonList(Topics.TOTAL_COST.name()));
         System.out.println("(TOTAL_COST) Fetching records");
         ConsumerRecords<String, String> records = totalCostConsumer.poll(Duration.of(10, ChronoUnit.SECONDS));
